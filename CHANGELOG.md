@@ -1,5 +1,107 @@
 # Changelog
 
+## [2026.11.13](https://github.com/jdx/mise/releases/tag/v2026.11.13) - 2026-11-23
+
+### 🚀 Features
+
+- **(backend)** warn about tool options core tools and dotnet do not read by @jdx in [#15986](https://github.com/jdx/mise/pull/15986)
+- **(task)** add --no-global and --global to the mise run task picker by @jdx in [#15972](https://github.com/jdx/mise/pull/15972)
+
+### 🐛 Bug Fixes
+
+- **(ci)** satisfy clippy on Windows and the latest beta by @jdx in [#15967](https://github.com/jdx/mise/pull/15967)
+- **(config)** deprecate MISE_USE_TOML=0 by @jdx in [#15980](https://github.com/jdx/mise/pull/15980)
+- **(config)** stop at ceiling paths written through a symlink by @jdx in [#15997](https://github.com/jdx/mise/pull/15997)
+- **(config)** stop at a ceiling when the start directory has a \\?\ prefix on Windows by @jdx in [#16010](https://github.com/jdx/mise/pull/16010)
+- **(env)** add packslip.compinit to skip compinit in zsh activation by @jdx in [#15996](https://github.com/jdx/mise/pull/15996)
+- **(lockfile)** let a packslip signer replace leftover cosign or minisign provenance by @jdx in [#15995](https://github.com/jdx/mise/pull/15995)
+- **(packslip)** stop zsh completion cleanup erroring in snapshot-restored shells by @jdx in [#15993](https://github.com/jdx/mise/pull/15993)
+- **(packslip)** install skills despite a rejected GitHub token, and read large loader caches by @jdx in [#16022](https://github.com/jdx/mise/pull/16022)
+- **(schema)** label experimental config from the checks that gate it by @jdx in [#15983](https://github.com/jdx/mise/pull/15983)
+- **(set)** edit configs that use [[env]] instead of panicking by @jdx in [#15987](https://github.com/jdx/mise/pull/15987)
+- **(set)** write to the [[env]] entry that takes effect when a group uses tools = true by @jdx in [#16000](https://github.com/jdx/mise/pull/16000)
+- **(sync)** find uv's pythons on Windows and name copies the way uv does by @jdx in [#16007](https://github.com/jdx/mise/pull/16007)
+- **(system-packages)** warn about unsupported brew requirements only when pouring by @jdx in [#15973](https://github.com/jdx/mise/pull/15973)
+- **(task)** read a task tool's pin from its own lockfile when a parent lists the tool by @jdx in [#15969](https://github.com/jdx/mise/pull/15969)
+- **(task)** do not export output in the silent style as OpenTelemetry logs by @jdx in [#15975](https://github.com/jdx/mise/pull/15975)
+- **(task)** follow blob redirects and honor Retry-After in the remote cache client by @jdx in [#15981](https://github.com/jdx/mise/pull/15981)
+- **(task)** stop a backgrounded mise run from hanging on SIGINT by @jdx in [#15991](https://github.com/jdx/mise/pull/15991)
+- **(upgrade)** speed up the tracked config scan, summarize its warnings and expire unused configs by @jdx in [#15994](https://github.com/jdx/mise/pull/15994)
+
+### 📚 Documentation
+
+- **(cookbook)** highlight run arrays in the neovim queries by @jdx in [#16019](https://github.com/jdx/mise/pull/16019)
+- **(exec)** explain PATH entries before shims in child lookup by @jdx in [#15968](https://github.com/jdx/mise/pull/15968)
+- review every page against the code and correct CLI help by @jdx in [#15974](https://github.com/jdx/mise/pull/15974)
+
+### ⚡ Performance
+
+- **(backend)** build MISE_BACKENDS_* variable names once per tool by @jdx in [#16002](https://github.com/jdx/mise/pull/16002)
+- **(config)** read MISE_ENV_CONF_D once per conf.d decision by @jdx in [#16004](https://github.com/jdx/mise/pull/16004)
+- **(config)** build settings once at startup when no flag sets one by @jdx in [#16003](https://github.com/jdx/mise/pull/16003)
+- **(lockfile)** stop repeating lockfile lookups for every tool by @jdx in [#16001](https://github.com/jdx/mise/pull/16001)
+- stop resolving backtraces for errors mise discards by @jdx in [#15999](https://github.com/jdx/mise/pull/15999)
+
+### 🧪 Testing
+
+- **(cli)** check that "Source code" links in the CLI reference point at real files by @jdx in [#15977](https://github.com/jdx/mise/pull/15977)
+- **(docs)** check that the error reference quotes messages mise still prints by @jdx in [#15985](https://github.com/jdx/mise/pull/15985)
+- **(e2e)** fail when there is no built mise binary to test by @jdx in [#15976](https://github.com/jdx/mise/pull/15976)
+- **(packslip)** fix the zsh completion tests broken by the compinit argument by @jdx in [#16008](https://github.com/jdx/mise/pull/16008)
+- **(perf)** benchmark a project with 29 installed tools by @jdx in [#15998](https://github.com/jdx/mise/pull/15998)
+- **(perf)** keep system config and config file name overrides out of the large benchmarks by @jdx in [#16009](https://github.com/jdx/mise/pull/16009)
+- **(perf)** share the large benchmarks' setup and env through a tak group by @jdx in [#16020](https://github.com/jdx/mise/pull/16020)
+- **(schema)** fail when declaration types drift from the dotfiles and daemons parsers by @jdx in [#15984](https://github.com/jdx/mise/pull/15984)
+
+### 📦️ Dependency Updates
+
+- remove stale zip advisory ignores from deny.toml by @jdx in [#15966](https://github.com/jdx/mise/pull/15966)
+- update rust crate jdx-tar to v1.1.3 by @renovate[bot] in [#15959](https://github.com/jdx/mise/pull/15959)
+- make each workspace crate compile on its own by @jdx in [#15982](https://github.com/jdx/mise/pull/15982)
+
+### 📦 Registry
+
+- add reylo by @jdx in [#15992](https://github.com/jdx/mise/pull/15992)
+
+### Chore
+
+- **(docs)** keep docs/cli intact when render:usage fails by @jdx in [#15978](https://github.com/jdx/mise/pull/15978)
+- **(entire)** remove trail runners by @jdx in [a353f52](https://github.com/jdx/mise/commit/a353f52fd7abca0fe83eed386d18a70fcebc97b6)
+- run clippy in mise run lint by @jdx in [#15979](https://github.com/jdx/mise/pull/15979)
+
+### Security
+
+- **(deps)** update url to 2.5.9 by @jdx in [#16015](https://github.com/jdx/mise/pull/16015)
+
+### 📦 Aqua Registry Updates
+
+#### New Packages (3)
+
+- [`agavra/tuicr`](https://github.com/agavra/tuicr)
+- [`kolunmi/ttyscheme`](https://github.com/kolunmi/ttyscheme)
+- [`lukeed/lane`](https://github.com/lukeed/lane)
+
+#### Updated Packages (18)
+
+- [`bazel-contrib/buildtools/buildifier`](https://github.com/bazel-contrib/buildtools)
+- [`bitwarden/clients`](https://github.com/bitwarden/clients)
+- [`corrupt952/closest`](https://github.com/corrupt952/closest)
+- [`d2lang/d2`](https://github.com/d2lang/d2)
+- [`gdubicki/ets`](https://github.com/gdubicki/ets)
+- [`k1LoW/deck`](https://github.com/k1LoW/deck)
+- [`knative/client`](https://github.com/knative/client)
+- [`knative/func`](https://github.com/knative/func)
+- [`masasuzu/clrnd`](https://github.com/masasuzu/clrnd)
+- [`nektos/act`](https://github.com/nektos/act)
+- [`nklmilojevic/sofka`](https://github.com/nklmilojevic/sofka)
+- [`openai/tunnel-client`](https://github.com/openai/tunnel-client)
+- [`tcnksm/ghr`](https://github.com/tcnksm/ghr)
+- [`tiny-earth-moon/outskirts`](https://github.com/tiny-earth-moon/outskirts)
+- [`txn2/kubefwd`](https://github.com/txn2/kubefwd)
+- [`utkuozdemir/pv-migrate`](https://github.com/utkuozdemir/pv-migrate)
+- [`x-motemen/ghq`](https://github.com/x-motemen/ghq)
+- [`yvgude/lean-ctx`](https://github.com/yvgude/lean-ctx)
+
 ## [2026.11.12](https://github.com/jdx/mise/releases/tag/v2026.11.12) - 2026-11-21
 
 ### 🚀 Features
